@@ -2,7 +2,6 @@ import { render, h } from 'preact';
 import htm from 'htm';
 import { useState, useEffect } from 'preact/hooks';
 
-const token = "c4kkb2aad3ib58s0a91g";
 const emoji = ["😖","☹️","🙁","😐","🙂","😄","🤤"];
 
 function getEmoji(change) {
@@ -10,11 +9,11 @@ function getEmoji(change) {
     return emoji[0];
   } else if (change < -3) {
     return emoji[1];
-  } else if (change < -1) {
+  } else if (change < -0.5) {
     return emoji[2];
-  } else if (change >= -1 && change <= 1) {
+  } else if (change >= -0.5 && change <= 0.5) {
     return emoji[3];
-  } else if (change > 1) {
+  } else if (change > 0.5) {
     return emoji[4];
   } else if (change > 3) {
     return emoji[5];
@@ -45,6 +44,7 @@ function getContainerStyle(change) {
 function getEmojiStyle() {
   return {
     fontSize: '12em',
+    cursor: 'default',
     margin: 0
   }
 }
@@ -53,6 +53,7 @@ function getTextStyle(change) {
   return { 
     borderRadius: '40px',
     background: 'white',
+    cursor: 'default',
     padding: '30px 20px 20px 20px',
     color: getColor(change),
     fontSize: '4em'
@@ -63,7 +64,7 @@ function App (props) {
   const [change, setChange] = useState(0);
   
   useEffect(() => {
-    fetch(`https://finnhub.io/api/v1/quote?symbol=SPY&token=${token}`)
+    fetch(`https://finnhub.io/api/v1/quote?symbol=SPY&token=${process.env.TOKEN}`)
       .then(res => res.json())
       .then(data => setChange(data.dp.toFixed(2)));
   }, []);
