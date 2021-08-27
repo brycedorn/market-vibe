@@ -1,0 +1,18 @@
+{
+  "name": "market-emoji",
+  "source": "index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.14.9",
+    "@babel/preset-env": "^7.15.0",
+    "htm": "^3.1.0",
+    "parcel": "latest"
+  },
+  "dependencies": {
+    "preact": "^10.5.14"
+  }
+}
