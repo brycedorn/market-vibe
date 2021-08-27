@@ -12,7 +12,7 @@ function getEmoji(change) {
     return emoji[1];
   } else if (change < -1) {
     return emoji[2];
-  } else if (change > -1 && change < 1) {
+  } else if (change >= -1 && change <= 1) {
     return emoji[3];
   } else if (change > 1) {
     return emoji[4];
