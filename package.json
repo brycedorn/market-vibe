@@ -4,13 +4,26 @@
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build"
+    "build": "parcel build",
+    "postbuild": "react-snap"
   },
   "devDependencies": {
     "@babel/plugin-transform-react-jsx": "^7.14.9",
     "@babel/preset-env": "^7.15.0",
     "htm": "^3.1.0",
-    "parcel": "latest"
+    "parcel": "latest",
+    "react-snap": "^1.23.0"
+  },
+  "reactSnap": {
+    "source": "dist",
+    "inlineCss": true,
+    "removeBlobs": true,
+    "removeScriptTags": true,
+    "removeStyleTags": true,
+    "minifyHtml": {
+      "collapseWhitespace": false,
+      "removeComments": false
+    }
   },
   "dependencies": {
     "preact": "^10.5.14"

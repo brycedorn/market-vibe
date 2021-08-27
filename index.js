@@ -73,7 +73,7 @@ function App (props) {
   }, [change])
   
   return (
-    <div id="test" style={getContainerStyle(change)}>
+    <div style={getContainerStyle(change)}>
       <h1 style={getEmojiStyle()}>{getEmoji(change)}</h1>
       <h2 style={getTextStyle(change)}>{change >= 0 ? "+" : ""}{change}%</h2>
     </div>
