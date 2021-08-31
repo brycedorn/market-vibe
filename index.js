@@ -2,7 +2,7 @@ import { render, h } from 'preact';
 import htm from 'htm';
 import { useState, useEffect } from 'preact/hooks';
 
-const emoji = ["😖","☹️","🙁","😐","🙂","😄","🤤"];
+const emoji = ["😖","😟","🙁","😐","🙂","😄","🤤"];
 
 function getEmoji(change) {
   if (change < -5) {
@@ -22,10 +22,10 @@ function getEmoji(change) {
   }
 }
 
-function getColor(change, opacityOverride) {
+function getColor(change) {
   const positive = change >= 0;
   const opacity = Math.abs(change * 20) / 100;
-  return `rgba(${positive ? 0 : 255}, ${positive ? 255 : 0}, 0, ${opacityOverride || opacity})`;
+  return `rgba(${positive ? 0 : 255}, ${positive ? 255 : 0}, 0, ${Math.max(0.15, opacity)})`;
 }
 
 function getContainerStyle(change) {
