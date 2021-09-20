@@ -5,9 +5,9 @@ import { useState, useEffect } from 'preact/hooks';
 const emoji = ["😖","😟","🙁","😐","🙂","😄","🤤"];
 
 function getEmoji(change) {
-  if (change < -5) {
+  if (change < -3) {
     return emoji[0];
-  } else if (change < -3) {
+  } else if (change < -2) {
     return emoji[1];
   } else if (change < -0.5) {
     return emoji[2];
@@ -15,9 +15,9 @@ function getEmoji(change) {
     return emoji[3];
   } else if (change > 0.5) {
     return emoji[4];
-  } else if (change > 3) {
+  } else if (change > 2) {
     return emoji[5];
-  } else if (change > 5) {
+  } else if (change > 3) {
     return emoji[5];
   }
 }
